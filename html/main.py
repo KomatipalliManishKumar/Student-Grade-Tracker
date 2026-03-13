@@ -7,11 +7,6 @@ Built with: Python 3, SQLite3 (no extra installs needed!)
 
 import sqlite3
 
-
-# ─────────────────────────────────────────────
-# DATABASE SETUP
-# ─────────────────────────────────────────────
-
 def connect():
     """Connect to SQLite database (creates file if it doesn't exist)."""
     return sqlite3.connect("grades.db")
@@ -44,10 +39,6 @@ def setup_database():
     conn.close()
     print("✅ Database ready.\n")
 
-
-# ─────────────────────────────────────────────
-# STUDENT OPERATIONS
-# ─────────────────────────────────────────────
 
 def add_student(name, email):
     """Insert a new student into the database."""
@@ -100,10 +91,6 @@ def delete_student(student_id):
     else:
         print(f"⚠️  No student found with ID {student_id}.")
 
-
-# ─────────────────────────────────────────────
-# GRADE OPERATIONS
-# ─────────────────────────────────────────────
 
 def add_grade(student_id, subject, grade):
     """Add a grade for a student."""
@@ -201,10 +188,6 @@ def top_students():
         print(f"{rank:<6} {name:<20} {avg}")
     print()
 
-
-# ─────────────────────────────────────────────
-# MENU
-# ─────────────────────────────────────────────
 
 def print_menu():
     print("\n========== GRADE TRACKER ==========")
